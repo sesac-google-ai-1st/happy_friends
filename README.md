@@ -21,7 +21,9 @@
 ![image](https://github.com/sesac-google-ai-1st/happy_friends/assets/147118232/b2bcfd6a-340e-4c2f-b84a-fe932e2eb8a0)
 
 ```python
-# .xml파일을 .txt파일로 바꾸기
-
-
+# .xml파일을 .txt파일로 바꾸는 함수를 이용한다.
+def write_yolov8_txt(folder, annotation):
+  out_filename = str(folder + annotation[0][:-3])
+  out_filename = os.path.splitext(out_filename)[0]
+  out_filename = out_filename+'.txt'
 ```
