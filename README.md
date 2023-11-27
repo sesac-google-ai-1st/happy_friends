@@ -19,3 +19,9 @@
 주어진 데이터는 coco데이터이다. yolo를 사용하려면 .xml파일을 .txt파일로 변경해야 한다.
 ```
 ![image](https://github.com/sesac-google-ai-1st/happy_friends/assets/147118232/b2bcfd6a-340e-4c2f-b84a-fe932e2eb8a0)
+
+```python
+# .xml파일을 .txt파일로 바꾸기
+
+
+```
