@@ -5,7 +5,7 @@
 ```
 
 
-**학습목표** : 영동고속도로 ch01 - ch04 자료들을 yolo로 학습시켜 car,truck,bus를 구분하도록 만든다.
+# **학습목표** : 영동고속도로 ch01 - ch04 자료들을 yolo로 학습시켜 car,truck,bus를 구분하도록 만든다.
 
 
 ![image](https://github.com/sesac-google-ai-1st/happy_friends/assets/147118232/523939c7-0ba1-4341-864e-69f7151c113b)
