@@ -4,9 +4,9 @@
 데이터 출처 : https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=164
 ```
 
-```
-학습목표 : 영동고속도로 ch01 - ch04 자료들을 yolo로 학습시켜 car,truck,bus를 구분하도록 만든다.
-```
+
+**학습목표** : 영동고속도로 ch01 - ch04 자료들을 yolo로 학습시켜 car,truck,bus를 구분하도록 만든다.
+
 
 ![image](https://github.com/sesac-google-ai-1st/happy_friends/assets/147118232/523939c7-0ba1-4341-864e-69f7151c113b)
 
@@ -87,9 +87,6 @@ def to_yolov8(y):
 
 ---
 
-# 레이블 시각화 하기
-
-
 ## 레이블 시각화와 어노테이션의 개념
 
 <span style="background-color:#fff5b1">레이블 시각화(label visualization)</span> : 데이터의 레이블 정보를 시각적으로 나타내어 데이터의 특징이나 패턴을 이해하거나 모델의 결과를 검증하는 데 도움을 주는 과정입니다. 
@@ -147,5 +144,6 @@ def to_yolov8(y):
 
 요약하면, 어노테이션은 데이터에 대한 실제 정보를 나타내는 것이며, 레이블 시각화는 이 어노테이션 정보를 시각적으로 나타내어 데이터 이해와 모델 평가를 용이하게 합니다. 레이블 시각화는 어노테이션에 의존하여 데이터를 시각적으로 표현하는 단계라고 볼 수 있습니다.
 
+---
 
-
+# 레이블 시각화
