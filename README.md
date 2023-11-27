@@ -148,4 +148,25 @@ def to_yolov8(y):
 ---
 
 # 레이블 시각화
-> 이미지에 대한 객체 감지 어노테이션을 로드하고 시각적으로 표시하는 기능을 수행
+### 이미지에 대한 객체 감지 어노테이션을 로드하고 시각적으로 표시하는 기능을 수행
+
+>1. glob_files 함수
+>2. load_images 함수
+>3. load_labels 함수
+>4. create_patch_rectangle 함수
+>5. plot_image 함수
+>6. plot_images 함수
+
+위의 함수들을 이용하여 시각화
+
+![image](https://github.com/sesac-google-ai-1st/happy_friends/assets/147118232/661227d4-43fb-4cba-9c86-746d629641aa)
+
+---
+
+# 히트맵과 그래프 분석
+
+![image](https://github.com/sesac-google-ai-1st/happy_friends/assets/147118232/ca548df3-9c07-4956-86e3-86b1d8748d9c)
+
+![image](https://github.com/sesac-google-ai-1st/happy_friends/assets/147118232/4c0b63e1-741f-4a7f-be35-4b243de12db8)
+
+>epoch을 늘려 학습시키면 데이터 loss는 0에 수렴하다가 올라가는 시점이 있다. 올라가는 시점에서 best.pt 학습은 더 이상 진행되지 않는다.
