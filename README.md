@@ -14,11 +14,15 @@
 
 ![image](https://github.com/sesac-google-ai-1st/happy_friends/assets/147118232/88266b98-a53e-40e4-9f6d-1825534d3150)
 
+
+## .xml을 .txt파일로 바꾸는 함수
+##### yolo는 txt파일을 이용하기 때문에 xml파일은 사용할 수 없다.
+
+![image](https://github.com/sesac-google-ai-1st/happy_friends/assets/147118232/b2bcfd6a-340e-4c2f-b84a-fe932e2eb8a0)
+
 ```
-영동 고속도로 일부를 조사
 주어진 데이터는 coco데이터이다. yolo를 사용하려면 .xml파일을 .txt파일로 변경해야 한다.
 ```
-![image](https://github.com/sesac-google-ai-1st/happy_friends/assets/147118232/b2bcfd6a-340e-4c2f-b84a-fe932e2eb8a0)
 
 ```python
 # .xml파일을 .txt파일로 바꾸는 함수를 이용한다.
@@ -37,7 +41,7 @@ def write_yolov8_txt(folder, annotation):
 "Coco"는 Microsoft이 개발한 Common Objects in Context(일반적인 맥락의 객체)의 약자로, 객체 감지 및 세분화를 위한 데이터셋을 나타냅니다. 
 반면에 "YOLO"는 You Only Look Once의 약자로, 객체 감지를 수행하는 데 사용되는 딥러닝 알고리즘을 나타냅니다.
 
-*__Coco 데이터__*
+**Coco 데이터**
 
 개요 : Coco 데이터셋은 객체 감지, 분할 및 캡션 생성을 위한 대규모 데이터셋으로, 이미지에 대한 다양한 객체의 주석이 포함되어 있습니다.
 Coco 데이터 포맷은 bbox 값이 x, y, w, h 값으로 구성되어 있으며, 모든 영상의 주석이 담겨진 하나의 json 파일로 구성되어 있습니다.
@@ -47,7 +51,7 @@ Coco 데이터 포맷은 bbox 값이 x, y, w, h 값으로 구성되어 있으며
 활용 : 주로 객체 감지 및 세분화 모델의 학습과 평가에 사용됩니다.
 
 
-*__YOLO 데이터__*
+**YOLO 데이터**
 
 개요: YOLO는 객체 감지를 위한 신경망 알고리즘으로, 이미지를 한 번에 전체적으로 분석하여 객체를 감지하는 특징이 있습니다.
 YOLO에서의 포맷은 클래스 번호와 전체 영상 크기에 대한 center x, center y, w, h 비율 값으로 구성되어 있으며, 한 영상 당 한 개의 txt파일로 구성되어 있습니다. 
@@ -60,3 +64,23 @@ YOLO에서의 포맷은 클래스 번호와 전체 영상 크기에 대한 cente
 요약하면, Coco는 객체 감지 및 세분화를 위한 데이터셋이고, YOLO는 이러한 데이터셋을 사용하여 훈련된 객체 감지 알고리즘을 나타냅니다.
 Coco 데이터셋은 여러 응용 분야에서 사용될 수 있으며, YOLO는 실시간으로 객체를 감지하기 위한 효율적인 딥러닝 알고리즘입니다.
 ```
+
+```python
+# coco데이터를 yolo데이터로 바꾸는 함수
+def to_yolov8(y):
+  """
+  # change to yolo v8 format
+  # [x_top_left, y_top_left, x_bottom_right, y_bottom_right] to
+  # [x_center, y_center, width, height]
+  """
+  width = y[2] - y[0]
+  height = y[3] - y[1]
+
+  if width < 0 or height < 0:
+      print("ERROR: negative width or height ", width, height, y)
+      raise AssertionError("Negative width or height")
+  return (y[0] + (width/2)), (y[1] + (height/2)), width, height
+
+```
+
+
